@@ -21,24 +21,24 @@ def main():
 
 
 
-    # credentials_dict = {
-    #     "type": st.secrets.google_credentials.type,
-    #     "project_id": st.secrets.google_credentials.project_id,
-    #     "private_key_id": st.secrets.google_credentials.private_key_id,
-    #     "private_key": st.secrets.google_credentials.private_key,
-    #     "client_email": st.secrets.google_credentials.client_email,
-    #     "client_id": st.secrets.google_credentials.client_id,
-    #     "auth_uri": st.secrets.google_credentials.auth_uri,
-    #     "token_uri": st.secrets.google_credentials.token_uri,
-    #     "auth_provider_x509_cert_url": st.secrets.google_credentials.auth_provider_x509_cert_url,
-    #     "client_x509_cert_url": st.secrets.google_credentials.client_x509_cert_url,
-    #     "universe_domain": "googleapis.com"
-    # }
+    credentials_dict = {
+        "type": st.secrets.google_credentials.type,
+        "project_id": st.secrets.google_credentials.project_id,
+        "private_key_id": st.secrets.google_credentials.private_key_id,
+        "private_key": st.secrets.google_credentials.private_key,
+        "client_email": st.secrets.google_credentials.client_email,
+        "client_id": st.secrets.google_credentials.client_id,
+        "auth_uri": st.secrets.google_credentials.auth_uri,
+        "token_uri": st.secrets.google_credentials.token_uri,
+        "auth_provider_x509_cert_url": st.secrets.google_credentials.auth_provider_x509_cert_url,
+        "client_x509_cert_url": st.secrets.google_credentials.client_x509_cert_url,
+        "universe_domain": "googleapis.com"
+    }
 
 
     scopes = ["https://www.googleapis.com/auth/spreadsheets"]
-    # creds = Credentials.from_service_account_file(credentials_dict, scopes = scopes)
-    creds = Credentials.from_service_account_file("credentials.json", scopes = scopes)
+    creds = Credentials.from_service_account_file(credentials_dict, scopes = scopes)
+    # creds = Credentials.from_service_account_file("credentials.json", scopes = scopes)
     client  = gspread.authorize(creds)
     sheet_id = "1zRsB81g4n6Br8h6cRlStNPBSSbAVQ24LulhZRq2NpTE"
     sheet = client.open_by_key(sheet_id)
