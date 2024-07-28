@@ -7,6 +7,7 @@ from OpenResult import open_random_search_result
 from OpenCommunities import open_communities
 from ScrollThrough import scroll_through
 import streamlit as st
+
 # from Login import login
 from time import sleep
 
@@ -21,16 +22,16 @@ def main():
 
 
     credentials_dict = {
-        "type": st.secrets["google_credentials"]["type"],
-        "project_id": st.secrets["google_credentials"]["project_id"],
-        "private_key_id": st.secrets["google_credentials"]["private_key_id"],
-        "private_key": st.secrets["google_credentials"]["private_key"],
-        "client_email": st.secrets["google_credentials"]["client_email"],
-        "client_id": st.secrets["google_credentials"]["client_id"],
-        "auth_uri": st.secrets["google_credentials"]["auth_uri"],
-        "token_uri": st.secrets["google_credentials"]["token_uri"],
-        "auth_provider_x509_cert_url": st.secrets["google_credentials"]["auth_provider_x509_cert_url"],
-        "client_x509_cert_url": st.secrets["google_credentials"]["client_x509_cert_url"],
+        "type": st.secrets.google_credentials.type,
+        "project_id": st.secrets.google_credentials.project_id,
+        "private_key_id": st.secrets.google_credentials.private_key_id,
+        "private_key": st.secrets.google_credentials.private_key,
+        "client_email": st.secrets.google_credentials.client_email,
+        "client_id": st.secrets.google_credentials.client_id,
+        "auth_uri": st.secrets.google_credentials.auth_uri,
+        "token_uri": st.secrets.google_credentials.token_uri,
+        "auth_provider_x509_cert_url": st.secrets.google_credentials.auth_provider_x509_cert_url,
+        "client_x509_cert_url": st.secrets.google_credentials.client_x509_cert_url,
         "universe_domain": "googleapis.com"
     }
 
